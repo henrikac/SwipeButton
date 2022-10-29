@@ -10,6 +10,10 @@ import SwiftUI
 struct DragComponent: View {
     private let action: () -> Void
     
+    private let backgroundColor: Color
+    
+    private let foregroundColor: Color
+    
     private let hapticsEnabled: Bool
     
     private let maxWidth: CGFloat
@@ -18,25 +22,27 @@ struct DragComponent: View {
 
     @State private var width: CGFloat
     
-    init(maxWidth: CGFloat, minWidth: CGFloat = CGFloat(50), hapticsEnabled: Bool = false, action: @escaping () -> Void) {
+    init(maxWidth: CGFloat, minWidth: CGFloat = CGFloat(50), backgroundColor: Color = .white, foregroundColor: Color = .blue, hapticsEnabled: Bool = false, action: @escaping () -> Void) {
         self.maxWidth = maxWidth
         self.minWidth = minWidth
         self.width = minWidth
+        self.backgroundColor = backgroundColor
+        self.foregroundColor = foregroundColor
         self.hapticsEnabled = hapticsEnabled
         self.action = action
     }
 
     var body: some View {
         RoundedRectangle(cornerRadius: 16)
-            .fill(.blue)
+            .fill(foregroundColor)
             .frame(width: width)
             .overlay(
                 ZStack {
                     Image(systemName: "chevron.right")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                        .foregroundColor(.blue)
-                        .frame(width: 42, height: 42)
-                        .background(RoundedRectangle(cornerRadius: 14).fill(.white))
+                        .font(.system(size: minWidth / 5 * 2, weight: .bold, design: .rounded))
+                        .foregroundColor(foregroundColor)
+                        .frame(width: minWidth - 8, height: minWidth - 8)
+                        .background(RoundedRectangle(cornerRadius: 14).fill(backgroundColor))
                         .padding(4)
                 },
                 alignment: .trailing

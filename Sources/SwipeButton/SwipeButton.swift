@@ -15,7 +15,7 @@ public struct SwipeButton: View {
     ///     - action: The action to run on a successfull swipe.
     public init(text: String, configuration: SwipeButtonConfiguration? = nil, action: @escaping () -> Void) {
         self.text = text
-        self.configuration = configuration ?? SwipeButtonConfiguration()
+        self.configuration = configuration ?? SwipeButtonConfiguration(height: 50)
         self.action = action
     }
     
@@ -31,6 +31,8 @@ public struct SwipeButton: View {
                 DragComponent(
                     maxWidth: geo.size.width,
                     minWidth: configuration.height,
+                    backgroundColor: configuration.dragBackgroundColor,
+                    foregroundColor: configuration.dragForegroundColor,
                     action: action
                 )
             }
