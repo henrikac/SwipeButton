@@ -35,7 +35,7 @@ public struct SwipeButtonConfiguration {
     ///     - foregroundColor: The color of the text inside the SwipeButton. (Default: `Color.white`)
     ///     - font: The font style for the text inside the SwipeButton. (Default: `Font.footnote`)
     ///     - enableHaptics: Whether the SwipeButton should have haptics enabled or not.
-    init(height: CGFloat = 50, dragColor: Color = .blue, backgroundColor: Color? = nil, foregroundColor: Color? = nil, font: Font? = nil, enableHaptics: Bool = false) {
+    public init(height: CGFloat = 50, dragColor: Color = .blue, backgroundColor: Color? = nil, foregroundColor: Color? = nil, font: Font? = nil, enableHaptics: Bool = false) {
         self.height = height
         self.dragColor = dragColor
         self.backgroundColor = backgroundColor ?? dragColor.opacity(0.4)
