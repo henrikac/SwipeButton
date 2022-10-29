@@ -37,6 +37,8 @@ SwipeButton(
     configuration: SwipeButtonConfiguration(
         height: 50, // this will also be the width of the drag component
         dragColor: .blue,
+        dragBackgroundColor: .white,
+        dragForegroundColor: .blue,
         backgroundColor: .blue.opacity(0.4),
         foregroundColor: .white,
         font: .footnote,
