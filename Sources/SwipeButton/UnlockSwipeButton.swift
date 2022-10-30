@@ -1,7 +1,14 @@
+//
+//  UnlockSwipeButton.swift
+//  
+//
+//  Created by Henrik Christensen  on 30/10/2022.
+//
+
 import SwiftUI
 
-/// SwipeButton
-public struct SwipeButton: View {
+/// UnlockSwipeButton
+public struct UnlockSwipeButton: View {
     private let text: String
 
     private let action: () -> Void
@@ -10,8 +17,8 @@ public struct SwipeButton: View {
 
     /// Initializer
     /// - Parameters:
-    ///     - text: The text displayed in the SwipeButton.
-    ///     - configuration: Configurations to customize the SwipeButton.
+    ///     - text: The text displayed in the UnlockSwipeButton.
+    ///     - configuration: Configurations to customize the UnlockSwipeButton.
     ///     - action: The action to run on a successfull swipe.
     public init(text: String, configuration: SwipeButtonConfiguration? = nil, action: @escaping () -> Void) {
         self.text = text
@@ -23,15 +30,15 @@ public struct SwipeButton: View {
         SwipeComponent(
             text: text,
             configuration: configuration,
-            type: .regular,
+            type: .locked,
             action: action
         )
     }
 }
 
-struct SwipeButton_Previews: PreviewProvider {
+struct UnlockSwipeButton_Previews: PreviewProvider {
     static var previews: some View {
-        SwipeButton(text: "Swipe Button") {
+        UnlockSwipeButton(text: "Unlock Swipe Button") {
             print("Success!")
         }
     }
