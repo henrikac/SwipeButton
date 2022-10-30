@@ -23,6 +23,10 @@ struct ContentView: View {
         SwipeButton(text: "Swipe Button") {
             print("Success!")
         }
+        
+        UnlockSwipeButton(text: "Unlock Swipe Button") {
+            print("Unlocked!")
+        }
     }
 }
 ```
