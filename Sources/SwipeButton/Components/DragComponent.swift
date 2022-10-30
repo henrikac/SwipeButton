@@ -33,7 +33,7 @@ struct DragComponent: View {
     }
 
     var body: some View {
-        DragItemComponent(width: $width) {
+        DragItemComponent(width: $width, foregroundColor: foregroundColor) {
             Image(systemName: "chevron.right")
                 .font(.system(size: minWidth / 5 * 2, weight: .bold, design: .rounded))
                 .foregroundColor(foregroundColor)

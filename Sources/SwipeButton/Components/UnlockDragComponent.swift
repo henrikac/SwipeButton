@@ -35,7 +35,7 @@ struct UnlockDragComponent: View {
     }
 
     var body: some View {
-        DragItemComponent(width: $width) {
+        DragItemComponent(width: $width, foregroundColor: foregroundColor) {
             LockUnlock()
                 .font(.system(size: minWidth / 5 * 2, weight: .bold, design: .rounded))
                 .foregroundColor(foregroundColor)

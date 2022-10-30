@@ -38,7 +38,7 @@ public struct UnlockSwipeButton: View {
 
 struct UnlockSwipeButton_Previews: PreviewProvider {
     static var previews: some View {
-        UnlockSwipeButton(text: "Unlock Swipe Button") {
+        UnlockSwipeButton(text: "Unlock Swipe Button", configuration: SwipeButtonConfiguration(dragColor: .red)) {
             print("Success!")
         }
     }
